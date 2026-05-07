@@ -1,0 +1,1 @@
+{"$schema":"https://json-schema.org/draft/2020-12/schema","type":"object","required":["appId","channel","slot","employeeId"],"properties":{"appId":{"type":"string"},"channel":{"type":"string"},"slot":{"type":"string"},"employeeId":{"type":"string"},"context":{"type":"object"}}}

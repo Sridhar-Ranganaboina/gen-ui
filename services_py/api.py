@@ -67,4 +67,4 @@ class Handler(BaseHTTPRequestHandler):
         return
 
 def create_server(port: int = 0):
-    return ThreadingHTTPServer(("127.0.0.1", port), Handler)
+    return ThreadingHTTPServer(("0.0.0.0", port), Handler)

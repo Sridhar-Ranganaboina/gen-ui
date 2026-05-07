@@ -13,6 +13,8 @@ class TestPlatformE2E(unittest.TestCase):
         cls.thread = Thread(target=cls.server.serve_forever, daemon=True)
         cls.thread.start()
         host, port = cls.server.server_address
+        if host == '0.0.0.0':
+            host = '127.0.0.1'
         cls.base = f"http://{host}:{port}"
 
     @classmethod

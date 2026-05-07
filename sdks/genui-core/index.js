@@ -1,8 +1,17 @@
+import { createHmac } from 'node:crypto';
+
 function getAuthHeaders(body, auth = {}) {
   const token = auth.token ?? process.env.GENUI_API_TOKEN ?? 'dev-token';
-  return {
+  const signingKey = auth.signingKey ?? process.env.GENUI_SIGNING_KEY;
+  const headers = {
     authorization: `Bearer ${token}`
   };
+
+  if (signingKey) {
+    headers['x-genui-signature'] = createHmac('sha256', signingKey).update(body).digest('hex');
+  }
+
+  return headers;
 }
 
 export async function evaluateDecision(baseUrl, request, auth) {

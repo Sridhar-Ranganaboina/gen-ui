@@ -1,0 +1,27 @@
+version: '3.9'
+services:
+  api:
+    image: python:3.11-slim
+    working_dir: /app
+    volumes:
+      - ..:/app
+    command: bash -lc "python -m services_py.run_server"
+    environment:
+      - GENUI_API_TOKEN=dev-token
+    ports:
+      - "8080:8080"
+    depends_on:
+      - redis
+      - postgres
+  redis:
+    image: redis:7
+    ports:
+      - "6379:6379"
+  postgres:
+    image: postgres:16
+    environment:
+      POSTGRES_PASSWORD: postgres
+      POSTGRES_USER: postgres
+      POSTGRES_DB: genui
+    ports:
+      - "5432:5432"

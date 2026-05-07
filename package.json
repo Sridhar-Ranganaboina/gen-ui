@@ -1,0 +1,11 @@
+{
+  "name": "gen-ui",
+  "version": "0.1.0",
+  "private": true,
+  "type": "module",
+  "scripts": {
+    "test": "node --test \"tests/unit/**/*.test.js\" \"tests/e2e/**/*.test.js\"",
+    "test:unit": "node --test \"tests/unit/**/*.test.js\"",
+    "test:e2e": "node --test \"tests/e2e/**/*.test.js\""
+  }
+}

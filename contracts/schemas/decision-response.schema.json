@@ -1,0 +1,1 @@
+{"$schema":"https://json-schema.org/draft/2020-12/schema","type":"object","required":["decisionId","candidateId","reasonCodes","manifest"],"properties":{"decisionId":{"type":"string"},"candidateId":{"type":"string"},"reasonCodes":{"type":"array","items":{"type":"string"}},"manifest":{"type":"object"},"audit":{"type":"object"}}}

@@ -1,0 +1,1 @@
+{"$schema":"https://json-schema.org/draft/2020-12/schema","type":"object","required":["eventType","employeeId","slot","timestamp"],"properties":{"eventType":{"enum":["impression","click","dismiss","submit","error","exposure"]},"employeeId":{"type":"string"},"slot":{"type":"string"},"timestamp":{"type":"string"}}}
